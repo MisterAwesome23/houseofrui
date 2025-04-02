@@ -57,7 +57,9 @@
 
 <div class="container">
     <h1>Little Wonders Await</h1>
-    <p>Premium Kidswear Crafted with Love & Innovation. Launching Soon.<br><small style="opacity:0.6;">Until then, tap anywhere to create some bubbles!</small></p>
+    <p>Premium Kidswear Crafted with Love & Innovation. Launching Soon.<br>
+       <small style="opacity:0.6;">Until then, tap anywhere to create some bubbles!</small>
+    </p>
 </div>
 <canvas id="gameCanvas"></canvas>
 
@@ -74,15 +76,27 @@
         canvas.height = window.innerHeight;
     });
 
-    window.addEventListener('click', function(e) {
+    // Bubble creation function
+    function createBubble(x, y) {
         const bubble = {
-            x: e.clientX,
-            y: e.clientY,
+            x: x,
+            y: y,
             radius: Math.random() * 15 + 5,
             speed: Math.random() * 0.5 + 0.5,
             opacity: 1
         };
         bubbles.push(bubble);
+    }
+
+    // Click event for desktops
+    window.addEventListener('click', function(e) {
+        createBubble(e.clientX, e.clientY);
+    });
+
+    // Touch event for mobile devices
+    window.addEventListener('touchstart', function(e) {
+        const touch = e.touches[0];
+        createBubble(touch.clientX, touch.clientY);
     });
 
     function drawBubbles() {
