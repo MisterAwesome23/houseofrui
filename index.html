@@ -37,6 +37,24 @@
             opacity: 0.8;
         }
 
+        .cta-button {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 12px 24px;
+            background-color: rgba(118, 199, 192, 0.9);
+            color: #fff;
+            font-weight: 600;
+            text-decoration: none;
+            border-radius: 50px;
+            opacity: 0.9;
+            transition: opacity 0.3s ease;
+            pointer-events: auto;
+        }
+
+        .cta-button:hover {
+            opacity: 1;
+        }
+
         canvas {
             position: absolute;
             top: 0;
@@ -60,6 +78,7 @@
     <p>Premium Kidswear Crafted with Love & Innovation. Launching Soon.<br>
        <small style="opacity:0.6;">Until then, tap anywhere to create some bubbles!</small>
     </p>
+    <a href="mailto:bhushan@indigointernational.in" class="cta-button">Let's chat</a>
 </div>
 <canvas id="gameCanvas"></canvas>
 
